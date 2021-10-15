@@ -39,6 +39,11 @@ import ExerciseRouting from '../Exercises/ExerciseRouting';
 import ExerciseContext from '../Exercises/ExerciseContext';
 import ExerciseRedux from '../Exercises/ExerciseRedux';
 import ExerciseTesting from '../Exercises/ExerciseTesting';
+import ExerciseComponents from '../Exercises/ExerciseComponents';
+import ExerciseUseState from '../Exercises/ExerciseUseState';
+import ExerciseUseReducer from '../Exercises/ExerciseUseReducer';
+import ExerciseEvents from '../Exercises/ExerciseEvents';
+import ExerciseCustomHook from '../Exercises/ExerciseCustomHook';
 
 export const Routes = () => (
   <Switch>
@@ -96,11 +101,12 @@ export const Routes = () => (
     {/* Exercises */}
 
     <Route path="/exercises" component={Exercises} exact />    
-    <Route path="/exercises/components" component={ExerciseUseEffect} exact />
-    <Route path="/exercises/use-state" component={ExerciseUseEffect} exact />
-    <Route path="/exercises/use-reducer" component={ExerciseUseEffect} exact />
+    <Route path="/exercises/components" component={ExerciseComponents} exact />
+    <Route path="/exercises/use-state" component={ExerciseUseState} exact />
+    <Route path="/exercises/use-reducer" component={ExerciseUseReducer} exact />
     <Route path="/exercises/use-effect" component={ExerciseUseEffect} exact />
-    <Route path="/exercises/events" component={ExerciseUseEffect} exact />
+    <Route path="/exercises/custom-hook" component={ExerciseCustomHook} exact />
+    <Route path="/exercises/events" component={ExerciseEvents} exact />
     <Route path="/exercises/component-architecture" component={ExerciseArchitecture} exact />
     <Route path="/exercises/lazy-loading" component={ExerciseLazyLoading} exact />
     <Route path="/exercises/routing" component={ExerciseRouting} exact />
