@@ -2,7 +2,11 @@
 
 Repository for React Training 101 offered by This Dot.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A collection of React code examples for the React 101 training provided by [This Dot](https://thisdot.co/).
+
+## Getting started
+
+Run `npm install` to install all the dependencies needed to run the project locally.
 
 ## Available Scripts
 
