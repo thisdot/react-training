@@ -1,5 +1,5 @@
-import { NavBar } from './Components/Routing/NavBar';
-import { Routes } from './Routes/Routes';
+import { NavBar } from './components/NavBar';
+import { Routes } from './routes/Routes';
 
 const App = () => {
   return (
