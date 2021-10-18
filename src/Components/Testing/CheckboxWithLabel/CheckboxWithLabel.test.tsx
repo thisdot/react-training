@@ -1,13 +1,11 @@
-import { fireEvent, render } from '@testing-library/react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import CheckboxWithLabel from './CheckboxWithLabel';
 
-// no need to unmount and cleanup DOM after test is finished (it's done automatically)
-// afterEach(cleanup);
+// unmount and cleanup after each test is finished
+// failing to call cleanup when you've called render could result in a memory leak or test issues
+afterEach(cleanup);
 
-// getByLabelText = returns the first matching HTML node (error if none match or more than one match)
-// queryByLabelText = returns an array of all matching nodes for a query, and an empty array if no elements match
-
-it('CheckboxWithLabel text changes after click', () => {
+it('toggles text after clicked', () => {
   const { queryByLabelText, getByLabelText } = render(
     <CheckboxWithLabel labelOn="On" labelOff="Off" />,
   );
@@ -21,3 +19,6 @@ it('CheckboxWithLabel text changes after click', () => {
 
   expect(queryByLabelText(/on/i)).toBeTruthy();
 });
+
+// getBy will throw an error if it doesn't find what it's looking for 
+// queryBy will return null if it can't find what its looking for

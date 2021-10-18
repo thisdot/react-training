@@ -5,7 +5,7 @@ const STATUS = {
   NORMAL: 'normal',
 };
 
-const MyLink = ({ page, children }: any) => {
+const MyLink = () => {
   const [status, setStatus] = useState(STATUS.NORMAL);
 
   const onMouseEnter = () => {
@@ -19,11 +19,11 @@ const MyLink = ({ page, children }: any) => {
   return (
     <a
       className={status}
-      href={page || '#'}
+      href='/'
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      {children}
+      {status}
     </a>
   );
 };

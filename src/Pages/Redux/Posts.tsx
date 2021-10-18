@@ -1,9 +1,11 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { deletePost } from "../../Store/actions/postActions";
 import { AppState } from "../../Store/types";
 import { Post } from "../../Store/types/postTypes";
 
 const Posts = () => {
+  const dispatch = useDispatch();
   const posts = useSelector(({ postReducer }: AppState) => postReducer.posts);
   
   return (
@@ -19,6 +21,7 @@ const Posts = () => {
               <Link to={`/redux/posts/${post.id}`}>
                 {post.title}
               </Link>
+              <button onClick={() => dispatch(deletePost(post))}>X</button>
             </li>
           ))}
         </ul>

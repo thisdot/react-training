@@ -8,10 +8,7 @@ const ContextPage = () => {
         <Link to="/context/usestate">Context with useState</Link>
       </p>
       <p>
-        <Link to="/context/rerender">Context pitfall: re-renders</Link>
-      </p>
-      <p>
-        <Link to="/context/usereducer">Context with useReducer</Link>
+        <Link to="/context/rerender-pitfall">Context re-render pitfall</Link>
       </p>
     </div>
   );

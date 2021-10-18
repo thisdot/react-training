@@ -16,4 +16,5 @@ it('renders the main menu', () => {
   expect(screen.getByText('Routing')).toBeInTheDocument();
   expect(screen.getByText('Context')).toBeInTheDocument();
   expect(screen.getByText('Redux')).toBeInTheDocument();
+  expect(screen.getByText('Testing')).toBeInTheDocument();
 });

@@ -82,11 +82,17 @@ const ContextRerenderPage = () => {
         <Count />
       </CountProvider>
 
+      <br /><br />
+
+      <h4>Explanation</h4>
       <p>
-      Every child of the <code>CountProvider</code> re-renders when the button is clicked.
+      The <code>Message</code> components don't use the <code>count</code> from the context, but they still re-render when the button is clicked.
       </p>
       <p>
-      The <code>Message</code> components don't use the <code>count</code> from the context, but they still re-render! 
+      The <code>Message</code> component calls <code>useContext</code> via the <code>useCountContext</code> hook.
+      </p>
+      <p>
+      Components that call <code>useContext</code> within the provider will re-render whenever the context’s state changes.
       </p>
     </div>
   )

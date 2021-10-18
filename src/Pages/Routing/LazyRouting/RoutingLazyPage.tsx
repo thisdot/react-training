@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Route,
   Link,
+  Switch,
 } from 'react-router-dom';
 import { Loading } from "../../../Components/ComponentLazyLoading/Loading";
 
@@ -14,18 +15,21 @@ function RoutingLazyPage () {
   return (
     <Router>
       <div>
+        <h1>Lazy Routing</h1>
         <ul>
-          <li><Link to='/'>Dashboard</Link></li>
-          <li><Link to='/profile'>Profile</Link></li>
-          <li><Link to='/topics'>Topics</Link></li>          
+          <li><Link to='/routing/lazy/dashboard'>Dashboard</Link></li>
+          <li><Link to='/routing/lazy/profile'>Profile</Link></li>
+          <li><Link to='/routing/lazy/topics'>Topics</Link></li>          
         </ul>
 
         <hr />
 
         <Suspense fallback={<Loading />}>
-          <Route exact path='/' component={Dashboard} />
-          <Route path='/profile' component={Profile} />
-          <Route path='/topics' component={Topics} />
+          <Switch>
+            <Route exact path='/routing/lazy/dashboard' component={Dashboard} />
+            <Route path='/routing/lazy/profile' component={Profile} />
+            <Route path='/routing/lazy/topics' component={Topics} />
+          </Switch>
         </Suspense>
       </div>
     </Router>

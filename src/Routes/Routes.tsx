@@ -9,68 +9,71 @@ import Home from '../Pages/Home';
 import ContextUseStatePage from '../Pages/Context/ContextUseStatePage';
 import ContextRerenderPage from '../Pages/Context/ContextRerenderPage';
 import ContextPage from '../Pages/Context/ContextPage';
-import ContextUseReducerPage from '../Pages/Context/ContextUseReducerPage';
 import RoutingLazyPage from '../Pages/Routing/LazyRouting/RoutingLazyPage';
 import Posts from '../Pages/Redux/Posts';
 import CreatePost from '../Pages/Redux/CreatePost';
 import UpdatePost from '../Pages/Redux/UpdatePost';
 import ReduxPage from '../Pages/Redux/ReduxPage';
+import UseStateCounter from '../Pages/Hooks/UseStateCounter';
+import UseEffectLifecycle from '../Pages/Hooks/UseEffectLifecycle';
+import UseEffectCounter from '../Pages/Hooks/UseEffectCounter';
+import UseEffectDependencyPitfall from '../Pages/Hooks/UseEffectDependencyPitfall';
+import UseEffectObjectPitfall from '../Pages/Hooks/UseEffectObjectPitfall';
+import UseRefInput from '../Pages/Hooks/UseRefInput';
+import UseRefPersisted from '../Pages/Hooks/UseRefPersisted';
+import CustomHook from '../Pages/Hooks/CustomHook';
+import ChildToParent from '../Pages/Components/ChildToParent';
+import ChildrenContainment from '../Pages/Components/ChildrenContainment';
+import ClickEvent from '../Pages/Components/ClickEvent';
+import ClickEventInline from '../Pages/Components/ClickEventInline';
+import ClickEventParam from '../Pages/Components/ClickEventParam';
+import ComponentSpecialization from '../Pages/Components/ComponentSpecialization';
+import ComponentSplitting from '../Pages/Components/ComponentSplitting';
+import ContainerPresentation from '../Pages/Components/ContainerPresentation';
+import EventSubmit from '../Pages/Components/EventSubmit';
+import ConditionalRendering from '../Pages/Components/ConditionalRendering';
+import Fragments from '../Pages/Components/Fragments';
+import Keys from '../Pages/Components/Keys';
 import ComponentsPage from '../Pages/Components/ComponentsPage';
 import HooksPage from '../Pages/Hooks/HooksPage';
-import UseEffectPage from '../Pages/Hooks/useEffect/UseEffectPage';
-import UseEffectSimplePage from '../Pages/Hooks/useEffect/useEffectSimplePage';
-import UseEffectFirstRenderPage from '../Pages/Hooks/useEffect/useEffectFirstRenderPage';
-import UseEffectDependencyPage from '../Pages/Hooks/useEffect/useEffectDependencyPage';
-import UseEffectAsyncPage from '../Pages/Hooks/useEffect/useEffectAsyncPage';
-import UseEffectCleanupFunctionPage from '../Pages/Hooks/useEffect/useEffectCleanupFunctionPage';
-import UseEffectDependencyPitfallPage from '../Pages/Hooks/useEffect/useEffectDependencyPitfallPage';
-import UseEffectObjectPitfallPage from '../Pages/Hooks/useEffect/useEffectObjectPitfallPage';
-import { UseCallbackPage } from '../Pages/Hooks/useCallback/useCallbackPage';
-import { UseRefPage } from '../Pages/Hooks/useRefPage';
-import { CustomHooksPage } from '../Pages/Hooks/CustomHooksPage';
-import UseCallbackProblemPage from '../Pages/Hooks/useCallback/useCallbackProblem';
-import UseCallbackSolutionPage from '../Pages/Hooks/useCallback/useCallbackSolution';
-import { UseMemoPage } from '../Pages/Hooks/useMemoPage';
-import ExerciseUseEffect from '../Exercises/ExerciseUseEffect';
-import Exercises from '../Pages/Exercises';
-import ExerciseArchitecture from '../Exercises/ExerciseArchitecture';
-import ExerciseLazyLoading from '../Exercises/ExerciseLazyLoading';
-import ExerciseRouting from '../Exercises/ExerciseRouting';
-import ExerciseContext from '../Exercises/ExerciseContext';
-import ExerciseRedux from '../Exercises/ExerciseRedux';
-import ExerciseTesting from '../Exercises/ExerciseTesting';
-import ExerciseComponents from '../Exercises/ExerciseComponents';
-import ExerciseUseState from '../Exercises/ExerciseUseState';
-import ExerciseUseReducer from '../Exercises/ExerciseUseReducer';
-import ExerciseEvents from '../Exercises/ExerciseEvents';
-import ExerciseCustomHook from '../Exercises/ExerciseCustomHook';
+import BasicComponents from '../Pages/Components/BasicComponents';
+import UseStateWithProps from '../Pages/Hooks/UseStateWithProps';
+import TestingPage from '../Pages/Testing/TestingPage';
 
 export const Routes = () => (
   <Switch>
     <Route path="/" component={Home} exact />
 
     {/* Components */}
-    
+        
     <Route path="/components" component={ComponentsPage} exact />
+    <Route path="/components/basic" component={BasicComponents} exact />
+    <Route path="/components/keys" component={Keys} exact />
+    <Route path="/components/fragments" component={Fragments} exact />
+    <Route path="/components/events/click" component={ClickEvent} exact />
+    <Route path="/components/events/inline" component={ClickEventInline} exact />
+    <Route path="/components/events/param" component={ClickEventParam} exact />
+    <Route path="/components/events/submit" component={EventSubmit} exact />
+    <Route path="/components/child-to-parent" component={ChildToParent} exact />
+    <Route path="/components/containment" component={ChildrenContainment} exact />
+    <Route path="/components/specialization" component={ComponentSpecialization} exact />
+    <Route path="/components/splitting" component={ComponentSplitting} exact />
+    <Route path="/components/container-view" component={ContainerPresentation} exact />
+    <Route path="/components/conditional-rendering" component={ConditionalRendering} exact />
 
-    {/* Hooks */}
+    {/* Hooks */}    
     
     <Route path="/hooks" component={HooksPage} exact />
-    <Route path="/hooks/use-effect" component={UseEffectPage} exact />
-    <Route path="/hooks/use-effect/simple" component={UseEffectSimplePage} exact />
-    <Route path="/hooks/use-effect/first-render" component={UseEffectFirstRenderPage} exact />
-    <Route path="/hooks/use-effect/dependency" component={UseEffectDependencyPage} exact />
-    <Route path="/hooks/use-effect/async" component={UseEffectAsyncPage} exact />
-    <Route path="/hooks/use-effect/cleanup" component={UseEffectCleanupFunctionPage} exact />
-    <Route path="/hooks/use-effect/pitfalls/dependency" component={UseEffectDependencyPitfallPage} exact />
-    <Route path="/hooks/use-effect/pitfalls/object" component={UseEffectObjectPitfallPage} exact />
-    <Route path="/hooks/use-callback" component={UseCallbackPage} exact />
-    <Route path="/hooks/use-callback/problem" component={UseCallbackProblemPage} exact />
-    <Route path="/hooks/use-callback/solution" component={UseCallbackSolutionPage} exact />
-    <Route path="/hooks/use-ref" component={UseRefPage} exact />
-    <Route path="/hooks/use-memo" component={UseMemoPage} exact />
-    <Route path="/hooks/custom-hooks" component={CustomHooksPage} exact />
-
+    <Route path="/hooks/use-state/counter" component={UseStateCounter} exact />
+    <Route path="/hooks/use-state/props" component={UseStateWithProps} exact />
+    <Route path="/hooks/use-effect/lifecycle" component={UseEffectLifecycle} exact />
+    <Route path="/hooks/use-effect/counter" component={UseEffectCounter} exact />
+    <Route path="/hooks/use-effect/pitfalls/dependency" component={UseEffectDependencyPitfall} exact />
+    <Route path="/hooks/use-effect/pitfalls/object" component={UseEffectObjectPitfall} exact />
+    <Route path="/hooks/use-ref/input" component={UseRefInput} exact />
+    <Route path="/hooks/use-ref/persisted" component={UseRefPersisted} exact />
+    <Route path="/hooks/custom-hook" component={CustomHook} exact />
+    
     {/* Routing */}
     
     <Route path="/routing" component={RoutingPage} exact />
@@ -88,8 +91,7 @@ export const Routes = () => (
 
     <Route path="/context" component={ContextPage} exact />
     <Route path="/context/usestate" component={ContextUseStatePage} exact />
-    <Route path="/context/rerender" component={ContextRerenderPage} exact />
-    <Route path="/context/usereducer" component={ContextUseReducerPage} exact />
+    <Route path="/context/rerender-pitfall" component={ContextRerenderPage} exact />
 
     {/* Redux */}
     
@@ -98,21 +100,9 @@ export const Routes = () => (
     <Route path="/redux/posts/create" component={CreatePost} exact />
     <Route path="/redux/posts/:id" component={UpdatePost} exact />
 
-    {/* Exercises */}
+    {/* Testing */}
 
-    <Route path="/exercises" component={Exercises} exact />    
-    <Route path="/exercises/components" component={ExerciseComponents} exact />
-    <Route path="/exercises/use-state" component={ExerciseUseState} exact />
-    <Route path="/exercises/use-reducer" component={ExerciseUseReducer} exact />
-    <Route path="/exercises/use-effect" component={ExerciseUseEffect} exact />
-    <Route path="/exercises/custom-hook" component={ExerciseCustomHook} exact />
-    <Route path="/exercises/events" component={ExerciseEvents} exact />
-    <Route path="/exercises/component-architecture" component={ExerciseArchitecture} exact />
-    <Route path="/exercises/lazy-loading" component={ExerciseLazyLoading} exact />
-    <Route path="/exercises/routing" component={ExerciseRouting} exact />
-    <Route path="/exercises/context" component={ExerciseContext} exact />
-    <Route path="/exercises/redux" component={ExerciseRedux} exact />
-    <Route path="/exercises/testing" component={ExerciseTesting} exact />
+    <Route path="/testing" component={TestingPage} exact />
 
     <Route path="*" component={NotFound} />
   </Switch>

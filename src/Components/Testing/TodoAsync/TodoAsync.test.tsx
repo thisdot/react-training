@@ -1,9 +1,7 @@
-import React from "react";
 import { render, fireEvent, waitFor } from "@testing-library/react";
 
 import { TodoAsync, api } from "./TodoAsync";
 
-// It's also possible to mock entire module using jest.mock('./api);
 const mockCreateItem = (api.createItem = jest.fn());
 
 test("users can add items to their list", async () => {
@@ -18,6 +16,7 @@ test("users can add items to their list", async () => {
   fireEvent.change(input, { target: { value: todoText } });
   fireEvent.click(button);
 
+  // wait for an element to appear (async wait) before proceeding
   await waitFor(() => getByText(todoText));
 
   expect(mockCreateItem).toBeCalledTimes(1);
@@ -25,5 +24,4 @@ test("users can add items to their list", async () => {
     "/items",
     expect.objectContaining({ text: todoText })
   );
-  expect(mockCreateItem).toEqual({ id: 123, text: todoText });
 });

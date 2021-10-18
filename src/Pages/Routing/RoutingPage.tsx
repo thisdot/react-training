@@ -2,10 +2,13 @@ import { Link } from 'react-router-dom';
 
 const RoutingPage = () => {
   return (
-    <div>
+    <main>
       <h1>Routing</h1>
 
       <h3>Standard Routing</h3>
+      <p>
+        <Link to="/">Home</Link>
+      </p>
       <p>
         <Link to="/about">About</Link>
       </p>
@@ -41,7 +44,7 @@ const RoutingPage = () => {
       <p>
         <Link to="/routing/lazy">Categories</Link>
       </p>
-    </div>
+    </main>
   );
 }
 

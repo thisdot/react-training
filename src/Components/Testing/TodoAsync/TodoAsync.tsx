@@ -1,5 +1,4 @@
 import React from "react";
-import "./styles.css";
 
 type TodoItem = {
   id: number;
@@ -37,8 +36,6 @@ export const TodoAsync = () => {
 
   return (
     <div>
-      <h1>Todos</h1>
-
       <ul>
         {items.map((item) => (
           <li key={item.id}>{item.text}</li>

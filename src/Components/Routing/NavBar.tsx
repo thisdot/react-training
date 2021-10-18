@@ -6,7 +6,8 @@ export const NavBar = () => {
   return (
     <ul>
       <li>
-        <NavLink to="/" activeStyle={{ color }} exact={true}>
+        {/* With exact, activeStyle will only be applied if the location is matched exactly */}
+        <NavLink to="/" activeStyle={{ color }} exact>
           Home
         </NavLink>
       </li>
@@ -21,7 +22,7 @@ export const NavBar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/routing" activeStyle={{ color }} exact={true}>
+        <NavLink to="/routing" activeStyle={{ color }}>
           Routing
         </NavLink>
       </li>
@@ -36,8 +37,8 @@ export const NavBar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/exercises" activeStyle={{ color }}>
-          Exercises
+        <NavLink to="/testing" activeStyle={{ color }}>
+          Testing
         </NavLink>
       </li>
     </ul>    

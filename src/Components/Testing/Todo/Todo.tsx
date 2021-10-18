@@ -29,8 +29,6 @@ export const Todo = () => {
 
   return (
     <div>
-      <h1>Todos</h1>
-
       <ul>
         {items.map((item) => (
           <li key={item.id}>{item.text}</li>
