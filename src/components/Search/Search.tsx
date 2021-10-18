@@ -19,6 +19,7 @@ const Search = ({ onSearch }: Props) => {
           <input 
             type="text" 
             onChange={event => setSearch(event.target.value)}
+            data-testid="username"
             name="username" />
           <button>Search</button>
         </form>

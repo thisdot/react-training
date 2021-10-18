@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { SearchResult, SearchResults } from "../types/github";
 
-const useSearch = (searchUsername: string | null) => {
-  const [username, setUsername] = useState(searchUsername);
+const useSearch = () => {
+  const [username, setUsername] = useState('');
   const [isProfilesLoading, setIsProfilesLoading] = useState(false);
   const [profiles, setProfiles] = useState<Array<SearchResult> | null>(null);
   const [isError, setIsError] = useState<boolean | null>(null);
