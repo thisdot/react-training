@@ -1,6 +1,6 @@
 # React Training 101 Demo App
 
-Repository for demo app that is built from the exercises that are part of the React 101 training provided by [This Dot](https://thisdot.co/).
+Repository for the exercises that are part of the React 101 training provided by [This Dot](https://thisdot.co/).
 
 ## Getting started
 
@@ -13,7 +13,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3006](http://localhost:3006) to view it in the browser.
+Open [http://localhost:3004](http://localhost:3004) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.

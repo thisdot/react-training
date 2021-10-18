@@ -4,10 +4,6 @@ import { Routes } from './routes/Routes';
 const App = () => {
   return (
     <>
-      <NavBar />
-
-      <hr />
-
       <Routes />
     </>
   );
