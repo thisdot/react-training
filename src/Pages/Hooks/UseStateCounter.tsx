@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // count changes when clicked but only when you use useState 
 // will the component re-render to show count's current value
@@ -10,6 +10,12 @@ const NoStateCounter = () => {
     count += 1;
     console.log(`[NoStateCounter] count is ${count}`);
   }
+
+  // NoStateCounter has an initial render but no re-renders
+  // since no props or state ever change (via useState)
+  useEffect(() => {
+    console.log('[NoStateCounter] render');
+  });
 
   return (
     <div>
@@ -26,14 +32,10 @@ const StateCounter = () => {
 
   return (
     <div>
-      <p>{count} clicks.</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click
-      </button>
-      {/* to avoid capturing a stale value of the state
+      <p>{count} clicks.</p>      
       <button onClick={() => setCount(prevCount => prevCount + 1)}>
         Click
-      </button> */}
+      </button>
     </div>
   );
 }

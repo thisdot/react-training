@@ -9,14 +9,13 @@ export const Counter = () => {
 
   // this gets called after every render
   // and set count updates the state, triggering a re-render
-  // thus, an infinite loop
-  /* eslint-disable react-hooks/exhaustive-deps */
+  // thus, an infinite loop  
   useEffect(() => setCount(count + 1));
 
   // solution  
-  // useEffect(() => setCount(count + 1), [value]);
+  // useEffect(() => setCount(prevCount => prevCount + 1), [value, setCount]);
 
-  const onChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {    
     setValue(target.value);
   };
   

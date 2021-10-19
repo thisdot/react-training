@@ -20,14 +20,13 @@ const ValueDisplay = ({ value }: any) => {
 // this is because useState is only called once here
 // even if the value prop changes, the val state will never change
 const ValueDisplayState = ({ value }: any) => {
-  /* eslint-disable @typescript-eslint/no-unused-vars */
   const [id, setId] = useState(value);
   
   // the component will re-render twice
   // one re-render for the prop change
   // and one re-render triggered by the setId(value) state change
   useEffect(() => {
-    console.log(`[ValueDisplay2] render with value ${value}`);
+    console.log(`[ValueDisplayState] render with value ${value}`);
   });
 
   // to correct the issue of keeping the state in sync with the prop

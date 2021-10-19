@@ -9,13 +9,12 @@ export function LetterCounter() {
   useEffect(() => {
     // this line creates a new object
     // two objects in JavaScript are equal only if they reference exactly the same object
-    setItem({ ...item, count: item.count + 1 });
+    setItem(prevItem => ({ ...prevItem, count: prevItem.count + 1 }));
   }, [item]);
-  // when a new 'item' object is created, useEffect detects that its dependency has changed
-  // the side-effect function is invoked again and calls setItem which creates an infinte loop
-
   // solution: use item.value as useEffect dependency
 
+  // when a new 'item' object is created, useEffect detects that its dependency has changed
+  // the side-effect function is invoked again and calls setItem which creates an infinte loop
   const onChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
     setItem({ ...item, value: target.value });
   };

@@ -1,4 +1,4 @@
-import { sum } from "./helper";
+import { fetchData, sum } from "./helper";
 
 describe('Testing sum helper function', () => {
   it('sums for positive numbers',()=>{
@@ -15,5 +15,15 @@ describe('Testing sum helper function', () => {
 
   test('sums for zero values', () => {
     expect(sum(0, 0)).toBe(0);
+  });
+});
+
+describe('Testing fetchData async function', () => {
+  test('data is returned', async () => {
+    await expect(fetchData()).resolves.toBe('data');
+  });
+
+  test('the fetch fails with an error', async () => {
+    await expect(fetchData(true)).rejects.toMatch('error');
   });
 });

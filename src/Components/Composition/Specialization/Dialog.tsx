@@ -6,7 +6,7 @@ type DialogProps = {
   className?: string;
 };
 
-export function Dialog(props: DialogProps) { console.log(props.className);
+export function Dialog(props: DialogProps) {
   return (
     <div className={`${styles.dialog} ${props.className ? styles[props.className] : ''}`}>
       <h1>{props.title}</h1>

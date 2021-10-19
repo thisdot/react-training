@@ -2,6 +2,7 @@ import { render, fireEvent, waitFor } from "@testing-library/react";
 
 import { TodoAsync, api } from "./TodoAsync";
 
+// mock the API function because we don't want to do an API request during a test
 const mockCreateItem = (api.createItem = jest.fn());
 
 test("users can add items to their list", async () => {
