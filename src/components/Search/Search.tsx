@@ -14,7 +14,6 @@ const Search = ({ onSearch, lastQuery }: Prop) => {
   };
 
   return (
-    <div>
       <form onSubmit={onSubmit}>
         <input 
           type="text"
@@ -24,7 +23,6 @@ const Search = ({ onSearch, lastQuery }: Prop) => {
         />
         <button>Search</button>
       </form>
-    </div>
   );
 }
 
