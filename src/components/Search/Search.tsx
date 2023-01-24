@@ -2,9 +2,10 @@ import { SyntheticEvent, useState } from "react";
 
 type Prop = {
   onSearch: (term: string) => void;
+  lastQuery?: string | undefined
 };
 
-const Search = ({ onSearch }: Prop) => {
+const Search = ({ onSearch, lastQuery }: Prop) => {
   const [username, setUsername] = useState('');
 
   const onSubmit = (e: SyntheticEvent) => {
@@ -18,7 +19,9 @@ const Search = ({ onSearch }: Prop) => {
         <input 
           type="text"
           onChange={event => setUsername(event.target.value)}
-          name="username" />
+          name="username"
+          value={lastQuery}
+        />
         <button>Search</button>
       </form>
     </div>

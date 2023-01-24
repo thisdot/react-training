@@ -1,5 +1,7 @@
 import Search from "../components/Search/Search";
 import useSearch from "../hooks/useSearch";
+import UserProfiles from "../components/UserProfiles";
+import FavoriteCount from "../components/FavoriteCount";
 
 const Users = () => {
   const { profiles, isProfilesLoading } = useSearch();  
@@ -11,12 +13,13 @@ const Users = () => {
   return (
     <>
       <Search onSearch={onSearch} />
-      <h1>Profiles</h1>
+        <section><h3>Favorites</h3><FavoriteCount /></section>
+      <h2>Profiles</h2>
       {isProfilesLoading && 
         <p>Loading...</p>
       }
-      {!isProfilesLoading && 
-        <p>{profiles?.length}</p>
+      {!isProfilesLoading && profiles &&
+        <UserProfiles profiles={profiles} />
       }
     </>
   );
