@@ -6,18 +6,7 @@ type Props = {
 };
 
 const UserProfiles = ({ profiles }: Props) => {
-  return (
-    <>
-      {profiles.map((profile, index) => {
-        return (
-          <div key={index}>
-            <UserProfile profile={profile} />
-            <hr />
-          </div>
-        );
-      })}
-    </>
-  );
-}
+  return <UserProfile profile={profiles[0]} />;
+};
 
 export default UserProfiles;
