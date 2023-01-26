@@ -7,16 +7,13 @@ type Props = {
 
 const UserProfiles = ({ profiles }: Props) => {
   return (
-    <>
-      {profiles.map((profile, index) => {
-        return (
-          <div key={index}>
-            <UserProfile profile={profile} />
-            <hr />
-          </div>
-        );
-      })}
-    </>
+    <ul>
+      {profiles.map((profile, index) => (
+        <li key={profile.username}>
+          <UserProfile profile={profile} />
+        </li>
+      ))}
+    </ul>
   );
 };
 
