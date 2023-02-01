@@ -1,27 +1,10 @@
-import { SyntheticEvent, useState } from 'react';
+type Props = {};
 
-type Prop = {
-  onSearch: (term: string) => void;
-  lastQuery?: string | undefined;
-};
-
-const Search = ({ onSearch, lastQuery }: Prop) => {
-  const [username, setUsername] = useState('');
-
-  const onSubmit = (e: SyntheticEvent) => {
-    e.preventDefault();
-    onSearch(username);
-  };
-
+const Search = ({}: Props) => {
   return (
-    <form onSubmit={onSubmit}>
-      <input
-        type='text'
-        onChange={(event) => setUsername(event.target.value)}
-        name='username'
-        value={lastQuery}
-      />
-      <button>Search</button>
+    <form>
+      <input type='text' name='username' />
+      <button type='submit'>Search</button>
     </form>
   );
 };

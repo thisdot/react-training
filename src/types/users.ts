@@ -1,5 +1,4 @@
 export interface IProfile {
-  isLoggedIn: boolean;
   username: string;
   name: string;
   bio: string;

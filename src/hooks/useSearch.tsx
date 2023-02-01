@@ -18,8 +18,8 @@ const useSearch = () => {
             (item: SearchResult) =>
               ({
                 username: item.login,
-                isLoggedIn: false,
-                name: 'Unknown',
+                name: 'Anonymous',
+                bio: "Search results don't actually have bio's. We can implement these later when we're fetching the full profile.",
                 avatarUrl: item.avatar_url,
                 profileUrl: item.url,
               } as IProfile),
