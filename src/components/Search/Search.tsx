@@ -1,27 +1,20 @@
-import { SyntheticEvent, useState } from 'react';
+import { FormEvent } from 'react';
 
-type Prop = {
-  onSearch: (term: string) => void;
-  lastQuery?: string | undefined;
+type Props = {
+  onSearch: (query: string) => void;
 };
 
-const Search = ({ onSearch, lastQuery }: Prop) => {
-  const [username, setUsername] = useState('');
-
-  const onSubmit = (e: SyntheticEvent) => {
+const Search = ({ onSearch }: Props) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    onSearch(username);
+    const formData = new FormData(e.target as HTMLFormElement);
+    onSearch(`${formData.get('username')}`);
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <input
-        type='text'
-        onChange={(event) => setUsername(event.target.value)}
-        name='username'
-        value={lastQuery}
-      />
-      <button>Search</button>
+    <form onSubmit={handleSubmit}>
+      <input type='text' name='username' />
+      <button type='submit'>Search</button>
     </form>
   );
 };
