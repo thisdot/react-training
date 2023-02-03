@@ -1,7 +1,5 @@
-import { useStore } from '../stores/favorites';
-
 const FavoriteCount = () => {
-  const { total } = useStore();
+  const total = 0; // Get total from store instead
   return <p>{total}</p>;
 };
 
