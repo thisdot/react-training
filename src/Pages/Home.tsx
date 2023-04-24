@@ -1,5 +1,5 @@
-import UserProfiles from "../components/UserProfiles";
-import Users from "./Users";
+import UserProfiles from '../components/UserProfiles';
+import Users from './Users';
 
 const Home = () => {
   const profiles = [
@@ -24,11 +24,11 @@ const Home = () => {
   return (
     <main>
       <h1>Home</h1>
-      
+
       {/* <UserProfiles profiles={profiles} /> */}
       <Users />
     </main>
   );
-}
+};
 
 export default Home;
