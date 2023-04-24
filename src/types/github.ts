@@ -8,7 +8,7 @@ export interface Profile {
   blog: string;
   location: string;
   bio: string;
-  twitter_username: string,
+  twitter_username: string;
   public_repos: number;
   public_gists: number;
   followers: number;

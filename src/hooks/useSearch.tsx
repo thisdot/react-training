@@ -1,8 +1,8 @@
 // custom hook
 
-import { useEffect, useState } from "react";
-import { SearchResult } from "../types/github";
-import { IProfile } from "../types/users";
+import { useEffect, useState } from 'react';
+import { SearchResult } from '../types/github';
+import { IProfile } from '../types/users';
 
 const useSearch = () => {
   const [isProfilesLoading, setIsProfilesLoading] = useState(false);
@@ -10,9 +10,7 @@ const useSearch = () => {
 
   useEffect(() => {
     async function fetchUsers() {
-      const response = await fetch(
-        `https://api.github.com/search/users?q=react`
-      );
+      const response = await fetch(`https://api.github.com/search/users?q=react`);
       if (response.ok) {
         const data = await response.json();
         setProfiles(
@@ -21,11 +19,11 @@ const useSearch = () => {
               ({
                 username: item.login,
                 isLoggedIn: false,
-                name: "Unknown",
+                name: 'Unknown',
                 avatarUrl: item.avatar_url,
                 profileUrl: item.url,
-              } as IProfile)
-          )
+              } as IProfile),
+          ),
         );
       }
       setIsProfilesLoading(false);

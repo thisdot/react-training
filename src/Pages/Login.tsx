@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useState } from 'react';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -13,28 +13,28 @@ const Login = () => {
   return (
     <form onSubmit={onSubmit}>
       <div>
-        <label htmlFor="username">Username</label>
+        <label htmlFor='username'>Username</label>
         <input
           value={username}
-          onChange={event => setUsername(event.target.value)}
-          id="username"
-          name="username"
-          type="text"
+          onChange={(event) => setUsername(event.target.value)}
+          id='username'
+          name='username'
+          type='text'
         />
       </div>
       <div>
-        <label htmlFor="password">Password</label>
-        <input   
-          value={password}   
-          onChange={event => setPassword(event.target.value)}      
-          id="password"
-          name="password"
-          type="password"
+        <label htmlFor='password'>Password</label>
+        <input
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+          id='password'
+          name='password'
+          type='password'
         />
       </div>
       <button>Submit</button>
     </form>
   );
-}
+};
 
 export default Login;

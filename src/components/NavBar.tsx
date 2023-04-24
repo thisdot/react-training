@@ -1,7 +1,3 @@
 export const NavBar = () => {
-  return (
-    <>
-
-    </>
-  );
-}
+  return <></>;
+};

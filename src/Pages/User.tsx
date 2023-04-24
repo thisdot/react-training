@@ -3,8 +3,7 @@ import useProfile from '../hooks/useProfile';
 import { IProfile } from '../types/users';
 import { useParams } from 'react-router-dom';
 
-const isProfile = (profile: any): profile is IProfile =>
-  Object.keys(profile).length === 0;
+const isProfile = (profile: any): profile is IProfile => Object.keys(profile).length === 0;
 
 type UserParams = {
   userId?: string;

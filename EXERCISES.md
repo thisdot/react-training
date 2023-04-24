@@ -14,7 +14,7 @@ Modify the `<UserProfile />` component.
 
 ## Components (Slide 44)
 
-Create a `<UserProfiles />` component that renders a list of `<UserProfile />` components. 
+Create a `<UserProfiles />` component that renders a list of `<UserProfile />` components.
 
 ```
 const profiles = [

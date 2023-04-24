@@ -1,5 +1,5 @@
-import { create as actualCreate } from "zustand";
-import { act } from "react-dom/test-utils";
+import { create as actualCreate } from 'zustand';
+import { act } from 'react-dom/test-utils';
 
 // a variable to hold reset functions for all stores declared in the app
 const storeResetFns = new Set();

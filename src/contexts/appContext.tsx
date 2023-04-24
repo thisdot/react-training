@@ -1,7 +1,7 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
 interface Context {
-    query: string
+  query: string;
 }
 
 const AppContext = createContext<Context | undefined>(undefined);

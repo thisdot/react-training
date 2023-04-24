@@ -1,5 +1,5 @@
-import { IProfile } from "../types/users";
-import UserProfile from "./UserProfile";
+import { IProfile } from '../types/users';
+import UserProfile from './UserProfile';
 
 type Props = {
   profiles: Array<IProfile>;
@@ -18,6 +18,6 @@ const UserProfiles = ({ profiles }: Props) => {
       })}
     </>
   );
-}
+};
 
 export default UserProfiles;

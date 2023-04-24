@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { IProfile } from "../types/users";
-import FavoriteButton from "./FavoriteButton";
+import { useState } from 'react';
+import { IProfile } from '../types/users';
+import FavoriteButton from './FavoriteButton';
 
 type Props = {
   profile: IProfile;
@@ -23,27 +23,27 @@ const UserProfile = ({ profile }: Props) => {
       <h3>{username}</h3>
       <FavoriteButton id={username} />
       <p>{name}</p>
-      {avatarUrl &&
+      {avatarUrl && (
         <p>
           <img src={avatarUrl} alt={username} />
         </p>
-      }
-      {profileUrl &&
+      )}
+      {profileUrl && (
         <p>
           <a href={profileUrl}>GitHub Profile</a>
         </p>
-      }
-      {bio &&
+      )}
+      {bio && (
         <div>
           <p>{isShowMore ? profile.bio : `${bio.substr(0, 20)}...`}</p>
 
           {isShowMore ? (
-            <button onClick={() => setIsShowMore(false)}>Read less</button>            
+            <button onClick={() => setIsShowMore(false)}>Read less</button>
           ) : (
             <button onClick={() => setIsShowMore(true)}>Read more</button>
           )}
         </div>
-      }
+      )}
     </div>
   );
 };

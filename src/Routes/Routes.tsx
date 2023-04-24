@@ -6,7 +6,7 @@ import Users from '../Pages/Users';
 export const AppRoutes = () => (
   <Routes>
     {/* <Route path="/" element={<Home />} /> */}
-    <Route path="users" element={<Users />} />
-    <Route path="users/:userId" element={<User />} />
+    <Route path='users' element={<Users />} />
+    <Route path='users/:userId' element={<User />} />
   </Routes>
 );

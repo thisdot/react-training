@@ -1,8 +1,8 @@
-import { SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useState } from 'react';
 
 type Prop = {
   onSearch: (term: string) => void;
-  lastQuery?: string | undefined
+  lastQuery?: string | undefined;
 };
 
 const Search = ({ onSearch, lastQuery }: Prop) => {
@@ -14,16 +14,16 @@ const Search = ({ onSearch, lastQuery }: Prop) => {
   };
 
   return (
-      <form onSubmit={onSubmit}>
-        <input 
-          type="text"
-          onChange={event => setUsername(event.target.value)}
-          name="username"
-          value={lastQuery}
-        />
-        <button>Search</button>
-      </form>
+    <form onSubmit={onSubmit}>
+      <input
+        type='text'
+        onChange={(event) => setUsername(event.target.value)}
+        name='username'
+        value={lastQuery}
+      />
+      <button>Search</button>
+    </form>
   );
-}
+};
 
 export default Search;
