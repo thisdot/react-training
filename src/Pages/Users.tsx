@@ -1,20 +1,15 @@
 import Search from '../components/Search/Search';
-import useSearch from '../hooks/useSearch';
-import UserProfiles from '../components/UserProfiles';
+import Profiles from '../components/Profiles';
+import { useState } from 'react';
 
 const Users = () => {
-  const { profiles, isProfilesLoading } = useSearch();
-
-  const onSearch = (term: string) => {
-    console.log(term);
-  };
+  const [query, setQuery] = useState('react');
 
   return (
     <>
-      <Search onSearch={onSearch} />
+      <Search onSearch={setQuery} />
       <h2>Profiles</h2>
-      {isProfilesLoading && <p>Loading...</p>}
-      {!isProfilesLoading && profiles && <UserProfiles profiles={profiles} />}
+      <Profiles query={query} />
     </>
   );
 };
