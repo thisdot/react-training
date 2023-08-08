@@ -31,7 +31,7 @@ const useSearch = (query: string) => {
 
     setIsProfilesLoading(true);
     fetchUsers();
-  }, []);
+  }, [query]);
 
   return { profiles, isProfilesLoading };
 };

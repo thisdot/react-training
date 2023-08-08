@@ -21,7 +21,7 @@ const Search = ({ onSearch, lastQuery }: Prop) => {
         name='username'
         value={lastQuery}
       />
-      <button>Search</button>
+      <button type='submit'>Search</button>
     </form>
   );
 };

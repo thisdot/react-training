@@ -11,7 +11,7 @@ const Profiles = ({ query }: Props) => {
   if (isProfilesLoading) {
     return <p>Loading...</p>;
   }
-  if (!isProfilesLoading || !profiles) {
+  if (!profiles) {
     return <p>Something went wrong</p>;
   }
 

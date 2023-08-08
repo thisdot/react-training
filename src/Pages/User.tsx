@@ -1,9 +1,7 @@
 import UserProfile from '../components/UserProfile';
 import useProfile from '../hooks/useProfile';
-import { IProfile } from '../types/users';
 import { useParams } from 'react-router-dom';
-
-const isProfile = (profile: any): profile is IProfile => Object.keys(profile).length === 0;
+import { IProfile } from '../types/users';
 
 type UserParams = {
   userId?: string;
@@ -11,16 +9,16 @@ type UserParams = {
 
 const User = () => {
   const { userId }: UserParams = useParams();
-  console.log('RENDER', userId);
   const { isLoading, isError, data } = useProfile(userId);
+
   if (isLoading) {
     return <p>Loading profile...</p>;
   }
-  if (isError || !isProfile(data)) {
+  if (isError) {
     return <p>An error occurred!</p>;
   }
 
-  return <UserProfile profile={data} />;
+  return <UserProfile profile={data as IProfile} />;
 };
 
 export default User;

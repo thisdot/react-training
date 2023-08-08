@@ -15,7 +15,16 @@ const useProfile = (userId?: string) => {
         if (!result.ok) {
           throw new Error('result is not OK!');
         }
-        setData(result.blob());
+        const item: Record<string, string> = await result.json();
+        const profile = {
+          username: item.login,
+          isLoggedIn: false,
+          name: 'Unknown',
+          avatarUrl: item.avatar_url,
+          profileUrl: item.url,
+          bio: item.bio,
+        };
+        setData(profile);
       } catch {
         setError(true);
       } finally {
